@@ -1,0 +1,31 @@
+//index.js
+const app = getApp()
+
+Page({
+  data: {
+    showList:[
+        {
+            icon:'',
+            text: '设置目的地，自动建群'
+        },{
+            icon: '',
+            text: '分享给好友' 
+        }, {
+            icon: '',
+            text: '好友加入群组'
+        }, {
+            icon: '',
+            text: '查看群成员剩余距离'
+        }, {
+            icon: '',
+            text: '查看群成员剩余时间'
+        }, {
+            icon: '',
+            text: '群组语音聊天'
+        }
+    ]
+  },
+  onLoad: function () {
+    
+  }
+})

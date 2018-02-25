@@ -1,0 +1,50 @@
+/**app.wxss**/
+/* 基本 */
+.wrapper{
+    width: 100%;
+    height: 100%;
+}
+/* 颜色定制 */
+.color-white{
+    color: #fff
+}
+.color-main{
+    color: #3c78ff;
+}
+
+/* flex相关 */
+.flex-box{
+    display: flex;
+}
+.flex1{
+    flex: 1;
+}
+.flex2{
+    flex: 2;
+}
+.flex-col{
+    flex-direction: column
+}
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rowCenter{
+    display: flex;
+    justify-content: center;
+}
+
+/* 边距相关 */
+.margin-left20{
+    margin-left: 20rpx;
+}
+.margin-top20{
+    margin-top: 20rpx;
+}
+.margin-right20{
+    margin-right: 20rpx;
+}
+.margin-bottom20{
+    margin-bottom: 20rpx;
+}
