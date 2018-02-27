@@ -11,6 +11,9 @@
 .color-main{
     color: #3c78ff;
 }
+.color-black{
+    color: black;
+}
 
 /* flex相关 */
 .flex-box{
@@ -34,6 +37,10 @@
     display: flex;
     justify-content: center;
 }
+.col-center{
+    display: flex;
+    align-items: center;
+}
 
 /* 边距相关 */
 .margin-left20{
@@ -47,4 +54,15 @@
 }
 .margin-bottom20{
     margin-bottom: 20rpx;
+}
+.padding20{
+    padding: 20rpx
+}
+.padding10{
+    padding: 10rpx
+}
+
+/* border */
+.border{
+    border: 2rpx solid #ccc;
 }

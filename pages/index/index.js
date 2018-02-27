@@ -23,7 +23,23 @@ Page({
             icon: '',
             text: '群组语音聊天'
         }
-    ]
+    ],
+    modalHidden: true
+  },
+  modalChange: function(){
+      this.setData({
+          modalHidden: true
+      })
+  },
+  modelEvent: function(){
+      this.setData({
+          modalHidden: false
+      })
+  },
+  modalCancel: function(){
+      this.setData({
+          modalHidden: true
+      })
   },
   onLoad: function () {
     
