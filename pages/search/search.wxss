@@ -1,1 +1,33 @@
 /* pages/search/search.wxss */
+.title{
+    height: 60rpx;
+}
+.search-container{
+    height: 100rpx;
+}
+.search-input{
+    background: #eee;
+    height: 70rpx;
+    width: 90%;
+}
+.input-item{
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 2rpx solid #ccc;
+    margin-left: 20rpx;
+}
+.item-image{
+    margin-right: 20rpx;
+}
+.item-text{
+    margin-left: 20rpx;
+    font-size: 32rpx;
+    color: #444;
+}
+.clear-box{
+    margin-left: 20rpx;
+    height: 90rpx;
+    border-bottom: 2rpx solid #ccc;
+    color: #999;
+}

@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    historyList:['北京','昌平','南站','三里屯','八维','李武帝','mapbar_front']
+  },
+  clearHistory: function(){
+      this.setData({
+          historyList: []
+      })
   },
 
   /**
