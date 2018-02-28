@@ -7,7 +7,11 @@
         <view class='flex2 rowCenter'>
             <view class='flex-box col-center search-input'>
                 <icon class='margin-left20' type="search" size="25" color="#666666"/>
-                <input class='margin-left20' placeholder='请输入搜索的地点'></input>
+                <view 
+                bindtap='navEvent' 
+                class='margin-left20'>
+                    请输入搜索的地点
+                </view>
             </view>
         </view>
         
@@ -36,7 +40,17 @@
         输入已有群号码，快速加入群组导航
     </view>
 </view>
-<modal hidden='{{modalHidden}}' bindconfirm="modalChange" bindcancel="modalCancel">
+
+
+<modal 
+    hidden='{{modalHidden}}' 
+    bindconfirm="modalChange" 
+    bindcancel="modalCancel"
+>
    <view class='center color-black'>输入群号码</view>
-   <input class='border margin-top20 padding10' type='text' placeholder='请输入群号码'></input>
+   <input 
+        class='border margin-top20 padding10' 
+        type='text' 
+        placeholder='请输入群号码'
+   ></input>
 </modal>

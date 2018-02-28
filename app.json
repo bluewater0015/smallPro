@@ -1,13 +1,14 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/chat/chat"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#3c78ff",
-    "navigationBarTitleText": "weChat",
-    "navigationBarTextStyle":"#fff"
-  }
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/chat/chat",
+        "pages/search/search"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#3c78ff",
+        "navigationBarTitleText": "图吧同行",
+        "navigationBarTextStyle": "#fff"
+    }
 }

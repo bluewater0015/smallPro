@@ -41,6 +41,12 @@ Page({
           modalHidden: true
       })
   },
+  navEvent: function(){
+      wx.navigateTo({
+          url: '../search/search',
+      });
+  },
+  //周期函数
   onLoad: function () {
     
   }

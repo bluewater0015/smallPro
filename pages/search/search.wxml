@@ -1,0 +1,7 @@
+<!--pages/search/search.wxml-->
+<text>pages/search/search.wxml</text>
+<view>
+    1、小程序中的接口调用wx.request;
+    2、['北京市公安局',"北京大学","中华人名共和国北京市市委","我爱北京"]
+    wx：for
+</view>
