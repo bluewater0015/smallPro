@@ -17,14 +17,23 @@
             <view bindtap='searchEvent' class='btn margin-right20'>搜索</view>
         </view>
     </view>
-    <view>
+    <view wx:if='{{!inputValue}}'>
         <view class='input-item' wx:key='{{index}}' wx:for='{{historyList}}'>
             <image class='icon' src='/resouces/myicon/clock.png'></image>
             <text class='flex1 item-text'>{{item}}</text>
             <image class='icon item-image' src='/resouces/myicon/listInput.png'></image>
         </view>
     </view>
-    <view wx:if='{{historyList.length}}' bindtap='clearHistory' class='center clear-box'>
+    <view wx:if='{{historyList.length && !inputValue}}' bindtap='clearHistory' class='center clear-box'>
         清除历史记录
+    </view>
+
+
+    <view>
+        <view class='input-item' wx:key='{{index}}' wx:for='{{recommandList}}'>
+            <image class='icon' src='/resouces/myicon/search.png'></image>
+            <text class='flex1 item-text'><text>{{item.left}}</text><text class='color-main'>{{item.mid}}</text><text>{{item.right}}</text></text>
+            <image class='icon item-image' src='/resouces/myicon/listInput.png'></image>
+        </view>
     </view>
 </view>
