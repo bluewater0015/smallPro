@@ -3,6 +3,7 @@ Page({
   data: {
     historyList:[],
     inputValue: '',
+    recommandList: []
   },
   clearHistory: function(){
       this.setData({
@@ -14,6 +15,30 @@ Page({
     var value = e.detail.value;
     this.setData({
         inputValue: value
+    });
+    wx.getLocation({
+        type: 'wgs84',
+        success: function (res) {
+            var latitude = res.latitude
+            var longitude = res.longitude
+            var speed = res.speed
+            var accuracy = res.accuracy
+
+            wx.request({
+                url: 'https://w.mapbar.com/search2015/search/suggest',
+                data: {
+                    keywords: '北京',
+                    city: '110000',
+                    location: latitude + ',' + longitude
+                },
+                header: {
+                    'content-type': 'application/json' // 默认值
+                },
+                success: function (res) {
+                    console.log('搜索结果', res.data)
+                }
+            })
+        }
     })
   },
   searchEvent: function(){
@@ -30,9 +55,14 @@ Page({
 
     //  || —— 满足前面的条件，不会管后面的条件
     //  && —— 满足前面的条件，继续查看后面的条件。
-    input && tag && arr.push(input);//在input不为空的情况下，并且input没有在数组中重复出现，进行push操作。
+    input && tag && arr.push(input) && dealArray(arr);//在input不为空的情况下，并且input没有在数组中重复出现，进行push操作。
 
     wx.setStorageSync('history', arr);
+    function dealArray(arr){
+        if(arr.length > 10) {
+            arr.shift()
+        }
+    }
   },
 
   /**
