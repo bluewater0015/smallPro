@@ -1,4 +1,5 @@
 // pages/search/search.js
+import AppService from '../../services/AppService.js';
 Page({
   data: {
     historyList:[],
@@ -17,6 +18,7 @@ Page({
     this.setData({
         inputValue: value
     });
+    //获取当前位置经纬度
     wx.getLocation({
         type: 'wgs84',
         success: function (res) {
@@ -24,43 +26,39 @@ Page({
             var longitude = res.longitude
             var speed = res.speed
             var accuracy = res.accuracy
-
-            wx.request({
-                url: 'https://w.mapbar.com/search2015/search/suggest',
-                data: {
-                    keywords: value,
-                    city: '110000',
-                    location: latitude + ',' + longitude
-                },
-                header: {
-                    'content-type': 'application/json' // 默认值
-                },
-                success: function (res) {
-                    console.log('搜索结果', res.data);
-                    var list = res.data.pois;
-                    var newList = list.map((item,index) => {
-                        return item.name
-                    });
-                    var recomArray = _this.dealItemString(newList, value);
-                    _this.setData({
-                        recommandList: recomArray
-                    })
-                }
+            //根据封装的服务，得到一个数据列表。
+            AppService.searchSuggest(value, latitude, longitude).then((res) => {
+                console.log('服务封装',res);
+                var list = res.data.pois;
+                var newList = list.map((item, index) => {
+                    return item.name
+                });
+                var recomArray = _this.dealItemString(newList, value);
+                _this.setData({
+                    recommandList: recomArray
+                })
             })
         }
     })
   },
+  /**
+   * 函数：dealItemString(list, important)——list需要处理的列表，import匹配关键字
+   * 作用：返回一个处理后的数组，把字符串数组转化为对象数组。
+   */
   dealItemString: function(list,important){
-    var left,mid,right;
+
+    //使用map方法，返回一个处理后的数组myList。
     var myList = list.map((item,index) => {
         var obj = new Object();
-        var strIndex = item.indexOf(important);
-        obj.left = item.substring(0, strIndex);
-        obj.mid = important;
-        obj.right = item.substring(strIndex+important.length,item.length)
+        var strIndex = item.indexOf(important);//获取匹配字符串的索引值。
+        obj.left = item.substring(0, strIndex);//截取一个居左位置的字符串
+        obj.mid = important;//中间字符串，就是当前匹配关键字
+        obj.right = item.substring(strIndex+important.length,item.length);
+        //截取右边字符串。
         return obj;
     });
-    return myList;
+    
+    return myList;//把得到的处理后的list当做函数的返回值！！！
   },
   searchEvent: function(){
     var input = this.data.inputValue;//获取input框的值。
