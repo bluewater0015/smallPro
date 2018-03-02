@@ -20,7 +20,17 @@ Page({
     var input = this.data.inputValue;//获取input框的值。
     var arr = wx.getStorageSync('history');//得到已经存储在缓存中的数组
     !arr && (arr = []);//如果数组不存在，就给一个新的[]
-    input && arr.push(input);//在input不为空的情况下，进行push操作。
+
+    var tag = true;
+    for(var i = 0; i < arr.length; i++){
+        if(arr[i] == input){
+            tag = false
+        }
+    }
+
+    //  || —— 满足前面的条件，不会管后面的条件
+    //  && —— 满足前面的条件，继续查看后面的条件。
+    input && tag && arr.push(input);//在input不为空的情况下，并且input没有在数组中重复出现，进行push操作。
 
     wx.setStorageSync('history', arr);
   },
@@ -31,8 +41,19 @@ Page({
   onLoad: function (options) {
       var list = wx.getStorageSync('history');
       console.log('list',list);
+      !list && (list = [])
+
+    //   var arr = [];
+    //   for (var i = list.length - 1; i >= 0; i--){
+    //       arr.push(list[i]);
+    //   }
+
+    //   var arr = [];
+    //   for(var i = 0; i < list.length; i++){
+    //       arr.unshift(list[i]);
+    //   }
       this.setData({
-          historyList: list
+          historyList: list.reverse()
       })
   },
 
