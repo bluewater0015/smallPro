@@ -1,23 +1,39 @@
 // pages/search/search.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    historyList:['北京','昌平','南站','三里屯','八维','李武帝','mapbar_front']
+    historyList:[],
+    inputValue: '',
   },
   clearHistory: function(){
       this.setData({
           historyList: []
-      })
+      });
+      wx.removeStorageSync('history')
+  },
+  inputEvent: function(e){
+    var value = e.detail.value;
+    this.setData({
+        inputValue: value
+    })
+  },
+  searchEvent: function(){
+    var input = this.data.inputValue;//获取input框的值。
+    var arr = wx.getStorageSync('history');//得到已经存储在缓存中的数组
+    !arr && (arr = []);//如果数组不存在，就给一个新的[]
+    input && arr.push(input);//在input不为空的情况下，进行push操作。
+
+    wx.setStorageSync('history', arr);
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+      var list = wx.getStorageSync('history');
+      console.log('list',list);
+      this.setData({
+          historyList: list
+      })
   },
 
   /**

@@ -5,16 +5,20 @@
         <view class='flex4 center'>
             <view class='flex-box col-center search-input'>
                 <icon class='margin-left20' type="search" size="20" color="#666666" />
-                <input type='text' placeholder='请输入搜索的地点' bindtap='navEvent' class='margin-left20' />
+                <input 
+                type='text' 
+                placeholder='请输入搜索的地点' 
+                bindinput = 'inputEvent'
+                class='margin-left20' />
 
             </view>
         </view>
         <view class='flex1 center'>
-            <view class='btn margin-right20'>搜索</view>
+            <view bindtap='searchEvent' class='btn margin-right20'>搜索</view>
         </view>
     </view>
     <view>
-        <view class='input-item' wx:for='{{historyList}}'>
+        <view class='input-item' wx:key='{{index}}' wx:for='{{historyList}}'>
             <image class='icon' src='/resouces/myicon/clock.png'></image>
             <text class='flex1 item-text'>{{item}}</text>
             <image class='icon item-image' src='/resouces/myicon/listInput.png'></image>
