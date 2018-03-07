@@ -18,7 +18,7 @@
         </view>
     </view>
     <view wx:if='{{!inputValue}}'>
-        <view class='input-item' wx:key='{{index}}' wx:for='{{historyList}}'>
+        <view bindtap='listEvent' data-value='{{item}}' class='input-item' wx:key='{{index}}' wx:for='{{historyList}}'>
             <image class='icon' src='/resouces/myicon/clock.png'></image>
             <text class='flex1 item-text'>{{item}}</text>
             <image class='icon item-image' src='/resouces/myicon/listInput.png'></image>

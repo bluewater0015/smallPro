@@ -1,0 +1,17 @@
+/* pages/searchResult/searchResult.wxss */
+.list-item{
+    height: 200rpx;
+    border: 1px solid #ccc;
+}
+.item-left{
+    width: 70rpx;
+}
+.item-right{
+    width: 200rpx;
+}
+.circle{
+    width: 35rpx;
+    height: 35rpx;
+    border-radius: 50%;
+    background: #3c78ff;
+}

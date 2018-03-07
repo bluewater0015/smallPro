@@ -32,6 +32,12 @@
 					"name": "search",
 					"pathName": "pages/search/search",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "searchResult",
+					"pathName": "pages/searchResult/searchResult",
+					"query": ""
 				}
 			]
 		}

@@ -53,6 +53,9 @@ page{
 }
 
 /* 边距相关 */
+.margin{
+    margin: 15rpx;
+}
 .margin-left20{
     margin-left: 20rpx;
 }

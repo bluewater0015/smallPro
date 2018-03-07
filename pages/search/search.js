@@ -82,6 +82,28 @@ Page({
             arr.shift()
         }
     }
+
+
+    if(input){
+        wx.navigateTo({
+            url: `/pages/searchResult/searchResult?des=${input}`
+        })
+    } else{
+        wx.showModal({
+            title: '提示',
+            content: '请输入搜索内容',
+            success: function (res) {
+                if (res.confirm) {
+                    console.log('用户点击确定')
+                } else if (res.cancel) {
+                    console.log('用户点击取消')
+                }
+            }
+        })
+    }
+  },
+  listEvent: function(e){
+    console.log('事件对象',e)
   },
 
   /**

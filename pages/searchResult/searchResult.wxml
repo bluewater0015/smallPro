@@ -1,0 +1,22 @@
+<!--pages/searchResult/searchResult.wxml-->
+<view class='container'>
+    <view class='flex-box flex-col list-item'>
+        <view class='flex-box flex3'>
+            <view class='item-left'>
+                <view class='circle center color-white margin'>1</view>
+            </view>
+            <view class='flex-box flex-col flex1'>
+                <view>北京首都国际机场</view>
+                <view>北京市朝阳区机场南路</view>
+            </view>
+            <view class='item-right'>东25km</view>
+        </view>
+
+        <view class='flex-box flex2'>
+            <view class='flex1 center watch-map border'>看地图</view>
+            <view class='flex1 center set-des border'>设终点</view>
+        </view>
+    </view>
+
+    <button bindtap='reLaunch'>reLaunch</button>
+</view>
