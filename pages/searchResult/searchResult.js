@@ -8,6 +8,22 @@ Page({
   data: {
       recommandList: []
   },
+  watchMapEvent: function (e) {
+    var value = e.currentTarget.dataset.item;
+    if (value) {
+        wx.navigateTo({
+            url: '/pages/watchMap/watchMap?value='+value,
+        })
+    }
+  },
+  setDesEvent: function (e) {
+      var value = e.currentTarget.dataset.item;
+      if(value){
+          wx.navigateTo({
+              url: '/pages/des/des?value='+value,
+          })
+      }
+  },
   reLaunch: function(){
       wx.reLaunch({
           url: '/pages/chat/chat',

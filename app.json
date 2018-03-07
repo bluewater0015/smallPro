@@ -4,7 +4,9 @@
         "pages/logs/logs",
         "pages/chat/chat",
         "pages/search/search",
-        "pages/searchResult/searchResult"
+        "pages/searchResult/searchResult",
+        "pages/watchMap/watchMap",
+        "pages/des/des"
     ],
     "window": {
         "backgroundTextStyle": "light",

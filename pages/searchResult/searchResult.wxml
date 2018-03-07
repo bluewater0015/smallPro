@@ -13,8 +13,8 @@
         </view>
 
         <view class='flex-box flex2'>
-            <view class='flex1 center watch-map border'>看地图</view>
-            <view class='flex1 center set-des border'>设终点</view>
+            <view bindtap='watchMapEvent' data-item='北京首都国际机场' class='flex1 center watch-map border'>看地图</view>
+            <view bindtap='setDesEvent' data-item='北京首都国际机场' class='flex1 center set-des border'>设终点</view>
         </view>
     </view>
 

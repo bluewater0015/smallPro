@@ -1,0 +1,23 @@
+<!--pages/watchMap/watchMap.wxml-->
+<view class='flex-box flex-col container'>
+    <map id="map" 
+    longitude="{{longitude}}" 
+    latitude="{{latitude}}" 
+    scale="{{scale}}" 
+    markers="{{markers}}" 
+    bindmarkertap='markersEvent'
+    show-location 
+    include-points="{{markers}}"
+    class='flex1'></map>
+
+    <swiper
+    style='height: 100px;'
+     indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+        <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="150"/>
+        </swiper-item>
+    </block>
+    </swiper>
+</view>

@@ -103,7 +103,13 @@ Page({
     }
   },
   listEvent: function(e){
-    console.log('事件对象',e)
+    console.log('事件对象',e);
+    var value = e.currentTarget.dataset.value;
+    if(value){
+        wx.navigateTo({
+            url: `/pages/searchResult/searchResult?des=${value}`
+        })
+    }
   },
 
   /**

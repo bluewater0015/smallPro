@@ -9,7 +9,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.91",
-	"appid": "touristappid",
+	"appid": "wxeb685e805db46b90",
 	"projectname": "smallPro",
 	"condition": {
 		"search": {
@@ -37,6 +37,12 @@
 					"id": -1,
 					"name": "searchResult",
 					"pathName": "pages/searchResult/searchResult",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "watchMap",
+					"pathName": "pages/watchMap/watchMap",
 					"query": ""
 				}
 			]
