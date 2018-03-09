@@ -1,2 +1,22 @@
 <!--pages/des/des.wxml-->
-<text>pages/des/des.wxml</text>
+<view class='container'>
+    <view>
+        
+    </view>
+    <view>
+        
+    </view>
+    <map></map>
+    <view class='flex-box speak'>
+        <view class='center width100'>
+            <image bindtap='setEvent' class='icon' src='/resouces/myicon/set.png'></image>
+        </view>
+        <view class='center flex1'>
+            <button class='speak'>按住说话</button>
+        </view>
+        <view class='center width100'>
+            <image bindtap='chatEvent' class='icon' src='/resouces/myicon/set.png'></image>
+        </view>
+    </view>
+</view>
+

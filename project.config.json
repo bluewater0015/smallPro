@@ -44,6 +44,12 @@
 					"name": "watchMap",
 					"pathName": "pages/watchMap/watchMap",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "des",
+					"pathName": "pages/des/des",
+					"query": ""
 				}
 			]
 		}

@@ -1,5 +1,7 @@
 //index.js
 const app = getApp()
+import WxService from '../../services/wxService.js';
+import AppService from '../../services/AppService.js';
 
 Page({
   data: {
@@ -46,8 +48,32 @@ Page({
           url: '../search/search',
       });
   },
-  //周期函数
   onLoad: function () {
-    
+      WxService.login().then((res) => {
+        console.log('服务封装的wx',res);
+        return WxService.getUserInfo().then(data => {
+            data.code = res.code;
+            return data;
+        })
+      }).then(userInfo => {
+          console.log('服务封装的wx',userInfo);
+            var code = userInfo.code;
+            var userimg = userInfo.userInfo.avatarUrl;
+            var username = userInfo.userInfo.nickName;
+            console.log(code);
+            return AppService.login(code, userimg, username)
+
+      }).then(res => {
+          console.log('1112',res);
+
+      }).catch(err => {
+          console.log(err);
+      }) 
+  },
+  onShareAppMessage: function(){
+      return {
+          title: '图吧同行',
+          path: '/pages/index/index'
+      }
   }
 })

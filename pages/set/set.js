@@ -1,4 +1,4 @@
-// pages/des/des.js
+// pages/set/set.js
 Page({
 
   /**
@@ -6,16 +6,6 @@ Page({
    */
   data: {
   
-  },
-  setEvent: function () {
-      wx.navigateTo({
-          url: '/pages/set/set',
-      })
-  },
-  chatEvent: function () {
-      wx.navigateTo({
-          url: '/pages/chat/chat',
-      })
   },
 
   /**

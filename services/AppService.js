@@ -10,6 +10,14 @@ function searchSuggest(value, latitude, longitude){
     })
 }
 
+function login(code, userimg,username){
+    return BaseService.get('https://wireless.mapbar.com/api/3n1-wxgroup/wxGroup/login.json',{
+        code,
+        userimg,
+        username
+    })
+}
+
 
 //search相关\
 
@@ -26,5 +34,6 @@ function commonSearch(keywords, location, city, page_num) {
 }
 module.exports = {
     searchSuggest: searchSuggest,
-    commonSearch
+    commonSearch,
+    login
 }

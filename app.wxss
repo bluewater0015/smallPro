@@ -105,3 +105,11 @@ page{
     width: 40rpx;
     height: 40rpx;
 }
+
+/* 宽高定制 */
+.width100{
+    width: 100rpx
+}
+.height75{
+    height: 75rpx;
+}

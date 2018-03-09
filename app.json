@@ -6,7 +6,9 @@
         "pages/search/search",
         "pages/searchResult/searchResult",
         "pages/watchMap/watchMap",
-        "pages/des/des"
+        "pages/des/des",
+        "pages/set/set",
+        "pages/help/help"
     ],
     "window": {
         "backgroundTextStyle": "light",
